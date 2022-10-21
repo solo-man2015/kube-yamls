@@ -18,7 +18,7 @@ spec:
       containers:
       - image: mongo
         name: mongo
-        args: ["--dbpath","/data/db"]
+#        args: ["--dbpath","/data/db"]
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
           value: "admin"
@@ -37,4 +37,6 @@ spec:
           mountPath: "/data/db"
       volumes:
       - name: "mongo-data-dir"
-        emptyDir: {}
+#        emptyDir: {}
+        persistentVolumeClaim: 
+         claimName: mongo-data-claim 

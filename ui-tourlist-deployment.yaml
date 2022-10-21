@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ui-tourlist
+  name: ui-tourlist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ui-tourlist
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: ui-tourlist
+    spec:
+      containers:
+      - image: soloman76/node-ui-tourlist
+        name: ui-tourlist

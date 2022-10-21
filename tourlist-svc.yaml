@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: tourlist
+  name: tourlist-nodeport-svc
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+    nodePort: 30000
+  selector:
+    app: tourlist
+  type: NodePort
+status:
+  loadBalancer: {}

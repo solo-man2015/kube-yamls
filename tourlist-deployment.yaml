@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tourlist
+  name: tourlist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tourlist
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: tourlist
+    spec:
+      containers:
+      - image: soloman76/node-tourlist-app
+        name: tourlist
+        env:
+         - name: HOST
+           value: "192.168.64.3"
