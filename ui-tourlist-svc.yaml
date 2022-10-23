@@ -5,8 +5,6 @@ metadata:
     app: ui-tourlist
   name: ui-tourlist-nodeport-svc
 spec:
-  type: ExternalName
-  externalName: ui-tourlist.example
   ports:
   - port: 3000
     protocol: TCP
