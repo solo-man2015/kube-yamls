@@ -18,25 +18,15 @@ spec:
       containers:
       - image: mongo
         name: mongo
-#        args: ["--dbpath","/data/db"]
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
           value: "admin"
-#          valueFrom:
-#            secretKeyRef:
-#              name: mongo-creds
-#              key: username
         - name: MONGO_INITDB_ROOT_PASSWORD
           value: "admin"
-#          valueFrom:
-#            secretKeyRef:
-#              name: mongo-creds
-#              key: password
         volumeMounts:
         - name: "mongo-data-dir"
           mountPath: "/data/db"
       volumes:
       - name: "mongo-data-dir"
-#        emptyDir: {}
         persistentVolumeClaim: 
          claimName: mongo-data-claim 

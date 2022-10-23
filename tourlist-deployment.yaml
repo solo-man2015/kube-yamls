@@ -5,7 +5,7 @@ metadata:
     app: tourlist
   name: tourlist
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: tourlist
@@ -20,4 +20,5 @@ spec:
         name: tourlist
         env:
          - name: HOST
+#	   Define the host IP of the mongo-nodeport-svc  
            value: "192.168.64.3"
